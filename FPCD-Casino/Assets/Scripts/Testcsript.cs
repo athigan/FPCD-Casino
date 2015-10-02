@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Testcsript : MonoBehaviour {
 
+	public int profile_id;
 	// Use this for initialization
 	void Start () {
 	
