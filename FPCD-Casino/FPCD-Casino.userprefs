@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BoardScripts/Board.cs">
+    <Files>
+      <File FileName="Assets/Scripts/KGDEngine/AnimateTextRunning.cs" Line="8" Column="3" />
+      <File FileName="Assets/Scripts/BoardScripts/Board.cs" Line="18" Column="31" />
+      <File FileName="Assets/Scripts/BoardScripts/ButtonOnBoard.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BoardScripts/BoardFaceID.cs" Line="4" Column="2" />
+      <File FileName="Assets/Scripts/BoardScripts/Bet.cs" Line="6" Column="20" />
+      <File FileName="Assets/Scripts/BoardScripts/BetType.cs" Line="19" Column="8" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
