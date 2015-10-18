@@ -1,9 +1,25 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿public class Testcsript {
 
-public class Testcsript : MonoBehaviour {
+	private int m_id;
+	private string m_name;
+	private int m_coin;
 
-	public int profile_id;
+	public int id
+	{
+		get { return m_id; }
+		set { m_id = value; }
+	}
+	public int name
+	{
+		get { return m_name; }
+		set { m_name = value; }
+	}
+	public int coin
+	{
+		get { return m_coin; }
+		set { m_coin = value; }
+	}
+
 	// Use this for initialization
 	void Start () {
 	
