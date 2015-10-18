@@ -1,7 +1,5 @@
 ﻿
 public class Bet  {
-
-	Player m_player;
-	int m_totalBet;
-	BetType m_betType;
+	public int m_totalBet;
+	public BetType m_betType;
 }

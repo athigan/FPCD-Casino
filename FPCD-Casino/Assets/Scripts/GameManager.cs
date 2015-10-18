@@ -1,28 +1,41 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class GameManager {
+public class GameManager
+{
 
 	private static GameManager m_singleton;
 
-	public static GameManager GetSingleton()
+	public static GameManager GetSingleton ()
 	{
-		if(m_singleton == null)
-			m_singleton = new GameManager();
+		if (m_singleton == null)
+			m_singleton = new GameManager ();
 		return m_singleton;
 	}
+	
+	private List<Player> m_playerList;
 
-
-	private Player m_player;
-	private GameManager()
+	private GameManager ()
 	{
-		m_player = new Player();
+		m_playerList = new List<Player> ();
+		CreateFakePlayerWithNumber (1);
 	}
 
-	public Player GetPlayer()
+	private void CreateFakePlayerWithNumber (int number)
 	{
-		return m_player;
+		m_playerList.Clear ();
+		for (int i = 0; i < number; i++) {
+			GameObject playerObject = new GameObject ();
+			Object.DontDestroyOnLoad (playerObject);
+			Player player = playerObject.AddComponent<Player> ();
+			player.InitPlayer (i, "Test User" + i, 1000000, 25);
+			m_playerList.Add (player);
+		}
 	}
-	public int m_testBet = 500;
-	public int m_testMoney = 500000000;
+
+	public Player GetPlayer (int id)
+	{
+		return m_playerList[id];
+	}
 }

@@ -2,61 +2,41 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
-	private int m_id;
-	private string m_name;
-	private int m_coin;
 	private Profile m_Profile;
-	public int Id
+	private Bet m_bet;
+
+	public Bet Bet
 	{
-		get { return m_id; }
-		set { m_id = value; }
+		get { return m_bet; }
 	}
-	public int Name
+	public Profile PlayerProfile
 	{
-		get { return m_name; }
-		set { m_name = value; }
-	}
-	public int Coin
-	{
-		get { return m_coin; }
-		set { m_coin = value; }
+		get { return m_Profile; }
+		set { m_Profile = value; }
 	}
 
-	// Use this for initialization
-	void Start () {
-		m_Profile = new Profile();
+	public void InitPlayer(int id, string name, int coin, int age)
+	{
+		m_Profile = new Profile(id, name, coin, age);
+		gameObject.name = name;
+		m_bet = new Bet();
 	}
-	void Start (string id,string name,int coin) {
-		Id = id;
-		Name = name;
-		Coin = coin;
-		m_Profile = new Profile();
+	private void VerifyBet()
+	{
+		if(m_bet.m_totalBet > m_Profile.Coin)
+			m_bet.m_totalBet = m_Profile.Coin;
+		if(m_bet.m_totalBet < 0)
+			m_bet.m_totalBet = 0;
 	}
 
-	public string ProfileFirstName
+	public void IncreaseBetValue(int bet)
 	{
-		get { return m_Profile.FirstName; }
-		set { m_Profile.FirstName = value; }
+		m_bet.m_totalBet += bet;
+		VerifyBet();
 	}
-	public string ProfileLastName
+	public void DecreaseBetValue(int bet)
 	{
-		get { return m_Profile.LastName; }
-		set { m_Profile.LastName = value; }
+		m_bet.m_totalBet -= bet;
+		VerifyBet();
 	}
-	public string ProfileNickName
-	{
-		get { return m_Profile.NickName; }
-		set { m_Profile.NickName = value; }
-	}
-	public int ProfileAge
-	{
-		get { return m_Profile.Age; }
-		set { m_Profile.Age = value; }
-	}
-
-	
-	// Update is called once per frame
-	//void Update () {
-	//
-	//}
 }
